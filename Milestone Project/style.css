@@ -3,13 +3,16 @@
     margin: 0;
 }
 
+#game{
+    height: 100vh;
+}
+
 /*Your Character*/
 #character{
     background-color: blue;
     height: 80px;
     width: 80px;
-    position: relative;
-    top: 260px;
+    position: fixed;
 }
 /*obstacle block*/ 
 #block2{
