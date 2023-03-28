@@ -1,30 +1,57 @@
 let character = document.getElementById('character')
-character.style.bottom = '515px'
-let move;
 
-window.addEventListener('keydown',(e)=> {
-    if (e.key === 'w') {
-        move = setInterval(() => {
-            let rect = character.getBoundingClientRect();
-            console.log(window.getComputedStyle(character).getPropertyValue('bottom'))
-            let currentBottom = rect.bottom;
-            let newBottom = currentBottom + 10;
-            character.style.bottom = newBottom + "px";
-        }, 10); // adjust this value to control the speed of movement
-    }
-    if(e.key === 'a') {
-        console.log("foward")
-    }
-    if(e.key === 's') {
-        console.log("foward")
-    }
-    if(e.key === 'd') {
-        console.log("foward")
-       }
-    });
+ function move(){
+        let direction = null;
+        let characterPos = character.getBoundingClientRect()
+        let x = characterPos.left;
+        let y = characterPos.top;
 
-    window.addEventListener('keyup', (e) => {
-        if (e.key === 'w') {
-            clearInterval(move);
+        character.style.left = x + 'px'
+        character.style.top = y + 'px'
+        
+        function moveCharacter(){ 
+            if(direction === 'west'){
+                x-=1
+            }
+            if(direction === 'north'){
+                y-=1
+            }
+            if(direction === 'east'){
+                x+=1
+            }
+            if(direction === 'south'){
+                y+=1
+            }
+            character.style.left = x + 'px'
+            character.style.top = y + 'px'
         }
-    });
+        
+        setInterval(moveCharacter, 1)
+        
+        document.addEventListener('keydown', function(e){
+            if(e.repeat) return;
+        
+            if(e.key === 'a'){
+                direction = 'west'
+            }
+            if(e.key === 'w'){
+                direction = 'north'
+            }
+            if(e.key === 'd'){
+                direction = 'east'
+            }
+            if(e.key === 's'){
+                direction = 'south'
+            }
+        })
+        
+        document.addEventListener('keyup', function(e){
+            direction = null
+        })
+    }
+
+
+    function main(){
+        move()
+    }
+    main()
