@@ -1,8 +1,8 @@
 let character = document.getElementById('character')
+let characterPos = character.getBoundingClientRect()
 
  function move(){
         let direction = null;
-        let characterPos = character.getBoundingClientRect()
         let x = characterPos.left;
         let y = characterPos.top;
 
@@ -53,5 +53,29 @@ let character = document.getElementById('character')
 
     function main(){
         move()
+        boxCollision()
     }
     main()
+
+
+    function boxCollision(){
+        setInterval(() => {
+        let block3 = document.querySelector("#block3")
+        let block3Pos = block3.getBoundingClientRect()
+        let blockRight = block3Pos.right
+        let blockLeft = block3Pos.left
+        let blockTop = block3Pos.top
+        let blockBottom = block3Pos.bottom
+        let characterPos = character.getBoundingClientRect()
+         if(characterPos.right > blockLeft ||
+        characterPos.left < blockRight ||
+        characterPos.bottom > blockTop ||
+        characterPos.top < blockBottom) {
+        console.log("im touhcing")
+         }
+            console.log(characterPos.left, blockRight)
+        }, 10);
+       
+    } 
+
+
