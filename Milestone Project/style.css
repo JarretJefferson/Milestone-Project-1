@@ -4,7 +4,14 @@
 }
 
 #game{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-image:url("https://s3.envato.com/files/c869cf0a-78f1-46c5-afe8-242a94290a97/inline_image_preview.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    background-attachment: fixed;
 }
 
 /*Your Character*/
@@ -13,6 +20,7 @@
     height: 80px;
     width: 80px;
     position: fixed;
+    background-image: url();
 }
 /*obstacle block*/ 
 #block2{
@@ -41,3 +49,4 @@
     left: 1300px;
     top: 20px;
 }
+
