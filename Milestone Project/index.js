@@ -3,6 +3,7 @@ let characterPos = character.getBoundingClientRect();
 let x = characterPos.left;
 let y = characterPos.top;
 let didYouWinSon = false;
+
 function move() {
   let direction = null;
   function moveCharacter() {
@@ -23,7 +24,7 @@ function move() {
       character.style.top = y + "px";
     }
   }
-
+    
   setInterval(moveCharacter, 1);
 
   document.addEventListener("keydown", function (e) {
@@ -47,7 +48,6 @@ function move() {
     direction = null;
   });
 }
-
 function main() {
   move();
   badBoxCollision();
