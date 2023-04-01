@@ -77,7 +77,7 @@ function badBoxCollision() {
         x = 0;
         y = 0;
         console.log("im touhcing");
-        alert("YOU LOSE");
+        window.location.href = "Lose.html";
       }
       console.log(characterPos.left, blockRight);
     }, 10);
@@ -103,7 +103,7 @@ function winBoxCollision() {
           characterPos.top < blockBottom
         ) {
           didYouWinSon = true;
-          alert("YOU WIN!");
+          window.location.href = "win.html";
         }
         console.log(characterPos.left, blockRight);
       }
