@@ -8,3 +8,7 @@ W = move up
 A = move left
 S = move down
 D = move right 
+
+The inspiration I used for this game was old school Mario, I used HTML to create my basis and skeloton for how I wanted this to be, then went to css for the styling and creating the postioning of my chracters. I also used a paint app to create how my characters look and the background, then finished it up with JS to add some functinality to it.
+
+One thing I that is a bit buggy or a obstacle for me was trying to get my Monster characters to move across the screen.
